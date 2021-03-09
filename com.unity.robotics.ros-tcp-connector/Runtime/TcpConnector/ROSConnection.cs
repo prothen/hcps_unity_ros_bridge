@@ -139,8 +139,10 @@ namespace Unity.Robotics.ROSTCPConnector
             {
                 if (attempts == this.awaitDataMaxRetries)
                 {
-                    Debug.LogError("No data available on network stream after " + awaitDataMaxRetries + " attempts.");
-                    goto finish;
+                    // Debug.LogError("No data available on network stream after " + awaitDataMaxRetries + " attempts.");
+                    // goto finish;
+                    // TODO: make more explicit that service timeout in error message.
+                    Debug.LogWarning("Service response timed out. Continuou anyhow.");
                 }
 
                 attempts++;
